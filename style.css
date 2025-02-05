@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fae1dd;
+    padding: 50px;
+}
+h1 {
+    color: #333;
+}
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.play-button {
+    background-color: #ee3b3b;
+    color: white;
+    border: none;
+}
+.play-button:hover {
+    background-color: #cd3333;
+}
+
+/* Envelope container */
+.envelope-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 200px auto 0;
+    cursor: pointer;
+}
+
+/* Envelope base */
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f08080;
+    border-radius: 0 0 20px 20px;
+    z-index: 1;
+}
+
+/* Envelope base shadow */
+.envelope:before {
+    content: "";
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background-color: #f08080;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+    z-index: 2;
+}
+
+/* Hidden paper */
+.paper {
+    position: absolute;
+    width: 270px;
+    height: 170px;
+    background-color: #eae2b7;
+    border: 2px dashed #003049;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 10px;
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    color: #003049;
+    transition: top 0.6s ease-in-out;
+    z-index: 3;
+}
+
+.paper p {
+    margin: 5px 0;
+    font-size: 20px;
+    line-height: 1.2;
+}
+.paper p:first-child {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Slide paper up */
+.paper.open {
+    top: -180px;
+}
+
+/* Envelope front flap */
+.front {
+    position: absolute;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+
+/* Envelope front flap shadow */
+.front:before {
+    position: absolute;
+    content: "";
+    border-left: 300px solid #f8ad9d;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+    width: 0;
+    height: 0;
+}
+
+/* "Secret 🔒" button */
+.lock-button {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #003049;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+/* Hide lock text when paper is revealed */
+.paper.open + .lock-button {
+    opacity: 0;
+}

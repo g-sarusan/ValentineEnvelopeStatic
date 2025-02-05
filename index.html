@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Before we ask any questions, I got a game for you...</h1>
+
+    <!-- Play Connections Button -->
+    <a href="connections_game.html" class="button play-button">Play Game</a>
+
+    <!-- Secret Envelope -->
+    <div class="envelope-container" onclick="revealPaper()">
+        <div class="envelope"></div>
+        <!-- The hidden paper -->
+        <div class="paper" id="secretPaper">
+            <p><strong>Secret Stuff</strong></p>
+            <p><strong>Title:</strong> Plans</p>
+            <p>🎨 Pottery Painting at 3pm</p>
+            <p>🍸 Frenchy Bar at 7:30pm</p>
+        </div>
+
+        <!-- Envelope front flap -->
+        <div class="front"></div>
+
+        <!-- Lock button text -->
+        <button class="lock-button" id="lockText">Secret 🔒</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
